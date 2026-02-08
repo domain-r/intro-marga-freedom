@@ -6,6 +6,50 @@
   <title>Marga Freedom — Selamat Datang</title>
   <style>
     body {
+
+      <!-- PAS DI BAWAH BODY CONTENT, TAPI MASIH DI BODY -->
+<!-- Toast notif -->
+<div id="toast" class="toast"></div>
+
+<script>
+  const toast = document.getElementById('toast');
+
+  // fungsi showToast
+  function showToast(msg, duration = 3500) {
+    toast.textContent = msg;
+    toast.style.position = 'fixed';
+    toast.style.top = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.background = '#7a5cff';
+    toast.style.color = '#fff';
+    toast.style.padding = '12px 24px';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+    toast.style.zIndex = 9999;
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.3s, transform 0.3s';
+
+    // tampilkan
+    setTimeout(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+    }, 50);
+
+    // hilangkan otomatis
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(-20px)';
+      setTimeout(() => toast.textContent = '', 300);
+    }, duration);
+  }
+
+  // notif pas halaman load
+  window.addEventListener('DOMContentLoaded', () => {
+    showToast("Selamat! Form lo sedang ditinjau. 🎉");
+  });
+</script>
+      
       background: linear-gradient(180deg, #0b0712, #120a1f);
       color: #e6e3ee;
       font-family: system-ui, sans-serif;
@@ -195,6 +239,7 @@
   </div>
 </body>
 </html>
+
 
 
 
