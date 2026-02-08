@@ -3,52 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marga Freedom — Selamat Datang</title>
-  <style>
-    body {
+  <title>Berhasil — Marga Freedom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✅ Selamat!</h1>
+    <p>Data kamu berhasil terkirim ke Marga Freedom.</p>
+    <div class="divider">✦ ✦ ✦</div>
+    <p>Nantikan update dan info selanjutnya. 🌌</p>
+  </div>
 
-<!-- PAS DI BAWAH BODY CONTENT, TAPI MASIH DI BODY -->
-<!-- Toast notif -->
-<div id="toast" class="toast"></div>
-
-<script>
-  const toast = document.getElementById('toast');
-
-  // fungsi showToast
-  function showToast(msg, duration = 3500) {
-    toast.textContent = msg;
-    toast.style.position = 'fixed';
-    toast.style.top = '20px';
-    toast.style.left = '50%';
-    toast.style.transform = 'translateX(-50%)';
-    toast.style.background = '#7a5cff';
-    toast.style.color = '#fff';
-    toast.style.padding = '12px 24px';
-    toast.style.borderRadius = '8px';
-    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
-    toast.style.zIndex = 9999;
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s, transform 0.3s';
-
-    // tampilkan
-    setTimeout(() => {
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-    }, 50);
-
-    // hilangkan otomatis
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-50%) translateY(-20px)';
-      setTimeout(() => toast.textContent = '', 300);
-    }, duration);
-  }
-
-  // notif pas halaman load
-  window.addEventListener('DOMContentLoaded', () => {
-    showToast("Selamat! Form lo sedang ditinjau. 🎉");
-  });
-</script>
+  <!-- notif optional -->
+  <div id="toast" class="toast"></div>
+  <script>
+    const toast = document.getElementById('toast');
+    toast.textContent = "Selamat datang di Marga Freedom! 🎉";
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  </script>
+</body>
+</html>
       
       background: linear-gradient(180deg, #0b0712, #120a1f);
       color: #e6e3ee;
@@ -239,6 +214,7 @@
   </div>
 </body>
 </html>
+
 
 
 
