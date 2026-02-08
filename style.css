@@ -1,124 +1,108 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   background: linear-gradient(180deg, #0b0712, #120a1f);
   color: #e6e3ee;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
-  padding: 40px 16px;
+  text-align: center;
 }
 
 .container {
-  max-width: 520px;
-  margin: auto;
+  max-width: 500px;
+  background: #1a102b;
+  border: 1px solid #3a2a5e;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 0 25px rgba(122, 92, 255, 0.4);
 }
 
 h1 {
-  text-align: center;
-  letter-spacing: 2px;
   color: #c9b6ff;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
 }
 
-.tagline {
-  text-align: center;
-  font-size: 0.9rem;
+p {
+  font-size: 0.95rem;
   color: #b8b2cc;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
 
-.desc {
-  text-align: center;
-  font-size: 0.85rem;
-  color: #9c95b5;
+.divider {
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #9b84ff;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #2d2442;
-  margin: 30px 0;
-}
-
-label {
-  font-size: 0.75rem;
-  color: #a89fd6;
-}
-
-input,
-textarea,
-select {
+input, select, textarea {
   width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  margin-bottom: 18px;
-  background: #1a102b;
-  border: 1px solid #3a2a5e;
+  padding: 10px;
+  margin: 6px 0 16px 0;
   border-radius: 6px;
-  color: #f1edff;
+  border: 1px solid #3a2a5e;
+  background: #1a102b;
+  color: #e6e3ee;
+  font-size: 0.95rem;
 }
 
-input::placeholder,
-textarea::placeholder {
-  color: #7f73a8;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   border-color: #7a5cff;
+  box-shadow: 0 0 8px rgba(122,92,255,0.5);
+}
+
+button {
+  background: #7a5cff;
+  color: #0e0a1a;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #9b84ff;
 }
 
 .checkbox {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.75rem;
-  color: #b8b2cc;
-  margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
 .checkbox input {
-  width: auto;
-}
-
-button {
-  width: 100%;
-  padding: 14px;
-  background: #7a5cff;
-  color: #0e0a1a;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #9b84ff;
+  margin-right: 8px;
 }
 
 footer {
-  text-align: center;
-  font-size: 0.75rem;
-  color: #8f86b5;
-  margin-top: 30px;
-}  width: 100%;
-  padding: 14px;
-  background: #7a5cff;
-  color: #0e0a1a;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #9b84ff;
-}
-
-footer {
-  text-align: center;
+  margin-top: 28px;
   font-size: 0.8rem;
   color: #8f86b5;
-  margin-top: 30px;
+}
+
+/* Toast notif */
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #7a5cff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  z-index: 9999;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
