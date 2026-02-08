@@ -4,26 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marga Freedom — Intro Member</title>
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="container">
 
-    <h1>MARGA FREEDOM</h1>
-    <p class="tagline"><strong>Freedom is not chaos. Freedom is self-control.</strong></p>
-    <p>Isi form ini dengan jujur dan singkat. Tidak perlu lebay.</p>
+    <h1>⟡ MARGA FREEDOM ⟡</h1>
+    <p class="subtitle">
+      <strong>Freedom is not chaos.</strong><br />
+      Freedom is self-control.
+    </p>
 
-    <hr />
+    <div class="divider">✦ ✦ ✦</div>
+
+    <div class="intro-box">
+      <p class="intro-quote">
+        ❝ Freedom bukan tempat sembarang orang.<br />
+        Hanya Pemuda Yang Mencari Kebebasan. ❞
+      </p>
+    </div>
+
+    <div class="divider">⟡ ⟡ ⟡</div>
 
     <form action="https://formspree.io/f/xgozqeaa" method="POST">
 
-      <label>Nama</label>
+      <label>⟡ Nama</label>
       <input type="text" name="nama" required />
 
-      <label>Gender</label>
+      <label>⟡ Gender</label>
       <select name="gender" required>
         <option value="">-- Pilih --</option>
         <option value="Laki-laki">Laki-laki</option>
@@ -31,33 +40,44 @@
         <option value="Lainnya">Lainnya</option>
       </select>
 
-      <label>No WhatsApp</label>
+      <label>⟡ No WhatsApp</label>
+      <small class="helper">Aktif. Bukan nomor cadangan.</small>
       <input type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" required />
 
-      <label>Nama TikTok</label>
+      <label>⟡ Nama TikTok</label>
       <input type="text" name="tiktok" placeholder="@username" />
 
-      <label>Umur</label>
+      <label>⟡ Umur</label>
       <input type="number" name="umur" required />
 
-      <label>Asal</label>
+      <label>⟡ Asal</label>
       <input type="text" name="asal" required />
 
-      <label>Minat / Hobi</label>
+      <label>⟡ Minat / Hobi</label>
       <input type="text" name="minat" />
 
-      <label>Alasan Join Marga Freedom</label>
+      <label>⟡ Alasan Join Marga Freedom</label>
       <textarea name="alasan" rows="4" required></textarea>
 
-      <label>Prinsip Hidup</label>
+      <label>⟡ Prinsip Hidup</label>
       <textarea name="prinsip" rows="3"></textarea>
 
-      <button type="submit">Kirim Intro</button>
+      <label>⟡ Apa arti Freedom buat lu?</label>
+      <textarea name="makna_freedom" rows="3" placeholder="Singkat. Jujur."></textarea>
 
+      <!-- FILTER LEVEL 3 -->
+      <label class="checkbox">
+        <input type="checkbox" name="setuju_rules" required />
+        Saya sudah membaca dan setuju dengan rules Marga Freedom.
+      </label>
+
+      <button type="submit">⟡ Saya Siap Masuk ⟡</button>
     </form>
 
+    <div class="divider">✦ ✦ ✦</div>
+
     <footer>
-      <em>Masuk dengan niat. Bertahan dengan sikap.</em>
+      ⟡ Masuk dengan niat. Bertahan dengan sikap. ⟡
     </footer>
 
   </div>
