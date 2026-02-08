@@ -17,7 +17,7 @@
 
     <div class="divider">✦ ✦ ✦</div>
 
-    <div class="intro-box">
+    <div class="intro-box" id="introBox">
       <p class="intro-quote">
         ❝ Freedom bukan tempat sembarang orang.<br>
         Hanya Pemuda Yang Mencari Kebebasan. ❞
@@ -80,15 +80,24 @@
 
   <script>
     const form = document.getElementById('introForm');
+    const introBox = document.getElementById('introBox');
 
+    // notif saat klik box intro
+    introBox.addEventListener('click', () => {
+      alert("Isi form intro dulu sebelum gabung grup!");
+    });
+
+    // notif pas submit form
     form.addEventListener('submit', async (e) => {
-      e.preventDefault(); // cegah redirect default
+      e.preventDefault();
 
-      // cek validasi sederhana
       if (!form.checkValidity()) {
         alert("Lengkapi semua field wajib.");
         return;
       }
+
+      // notif tambahan sebelum submit
+      alert("Data terkirim! Tunggu validasi admin sebelum gabung grup.");
 
       const formData = new FormData(form);
 
@@ -100,7 +109,6 @@
         });
 
         if (response.ok) {
-          // sukses → redirect ke halaman success
           window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
         } else {
           alert("Gagal submit, coba lagi.");
