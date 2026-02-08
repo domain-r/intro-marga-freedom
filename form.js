@@ -1,14 +1,27 @@
 const form = document.getElementById('introForm');
 const toast = document.getElementById('toast');
 
+// fungsi toast
 function showToast(msg, duration = 3000) {
   toast.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), duration);
 }
 
+// notif pas klik intro-box
+const introBox = document.querySelector('.intro-box');
+introBox.addEventListener('click', () => {
+  showToast("Klik form untuk isi data diri, jangan malas! ✨", 3500);
+});
+
+// notif pas load halaman
+window.addEventListener('load', () => {
+  showToast("Selamat datang di Marga Freedom! 🌌", 4000);
+});
+
+// submit form
 form.addEventListener('submit', async (e) => {
-  e.preventDefault(); // stop default form submit
+  e.preventDefault();
 
   if (!form.checkValidity()) {
     showToast("Lengkapi semua field wajib.", 3000);
@@ -29,8 +42,8 @@ form.addEventListener('submit', async (e) => {
     if (response.ok) {
       showToast("Data terkirim! ✅", 2500);
       setTimeout(() => {
-        window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
-      }, 1200); // biar notif keliatan dulu
+        window.location.href = "success.html";
+      }, 1200);
     } else {
       showToast("Gagal submit. Coba lagi.", 3000);
     }
