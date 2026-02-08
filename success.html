@@ -60,35 +60,7 @@
       background: #9b84ff;
     }
 
-    /* Toast */
-    #toast {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #7a5cff;
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      opacity: 0;
-      z-index: 9999;
-      transition: opacity 0.3s, transform 0.3s;
-    }
-
-    #toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>✅ Selamat!</h1>
-    <p>Data kamu berhasil terkirim ke Marga Freedom.</p>
-    <div class="divider">✦ ✦ ✦</div>
-    <p>Nantikan update dan info selanjutnya. 🌌</p>
-
+    
     <a href="https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/" target="_blank" class="button">Isi Intro</a>
   </div>
   
@@ -96,19 +68,10 @@
     <a href="https://tiktok.me/group/ZSfhJd7Vg/" target="_blank" class="button">Masuk Grup TT</a>
   </div>
 
-  <!-- Toast notif -->
-  <div id="toast"></div>
-  <script>
-    const toast = document.getElementById('toast');
-    function showToast(msg, duration = 4000) {
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), duration);
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       showToast("Form kamu sedang ditinjau. 🎉", 4000);
     });
   </script>
 </body>
 </html>
+
