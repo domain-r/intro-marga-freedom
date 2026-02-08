@@ -10,9 +10,11 @@ function showToast(msg, duration = 3000) {
 
 // notif pas klik intro-box
 const introBox = document.querySelector('.intro-box');
-introBox.addEventListener('click', () => {
-  showToast("Klik form untuk isi data diri, jangan malas! ✨", 3500);
-});
+if(introBox) {
+  introBox.addEventListener('click', () => {
+    showToast("Klik form untuk isi data diri, jangan malas! ✨", 3500);
+  });
+}
 
 // notif pas load halaman
 window.addEventListener('load', () => {
@@ -24,11 +26,11 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   if (!form.checkValidity()) {
-    showToast("Lengkapi semua field. wajib.", 3000);
+    showToast("Lengkapi semua field wajib.", 3000);
     return;
   }
 
-  showToast("Mengirim data… ⏳", 3000);
+  showToast("Mengirim data… ⏳", 1000); // optional singkat
 
   const formData = new FormData(form);
 
@@ -40,7 +42,7 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      // redirect langsung ke success
+      // langsung redirect tanpa menunggu toast
       window.location.href = "success.html";
     } else {
       showToast("Gagal submit. Coba lagi.", 3000);
