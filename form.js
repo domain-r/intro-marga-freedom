@@ -16,7 +16,7 @@ introBox.addEventListener('click', () => {
 
 // notif pas load halaman
 window.addEventListener('load', () => {
-  showToast("Selamat datang di Marga Freedom! 🌌", 4000);
+  showToast("Isi Semua Data Di Bawah ya! 🌌", 4000);
 });
 
 // submit form
@@ -52,3 +52,4 @@ form.addEventListener('submit', async (e) => {
     showToast("Terjadi error, cek koneksi.", 3000);
   }
 });
+
