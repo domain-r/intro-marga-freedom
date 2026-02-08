@@ -21,10 +21,16 @@ h1 {
   color: #c9b6ff;
 }
 
-p {
+.tagline {
   text-align: center;
+  font-size: 0.9rem;
   color: #b8b2cc;
-  font-size: 0.95rem;
+}
+
+.desc {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9c95b5;
 }
 
 hr {
@@ -34,7 +40,7 @@ hr {
 }
 
 label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #a89fd6;
 }
 
@@ -63,8 +69,40 @@ select:focus {
   border-color: #7a5cff;
 }
 
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: #b8b2cc;
+  margin-bottom: 20px;
+}
+
+.checkbox input {
+  width: auto;
+}
+
 button {
   width: 100%;
+  padding: 14px;
+  background: #7a5cff;
+  color: #0e0a1a;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #9b84ff;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #8f86b5;
+  margin-top: 30px;
+}  width: 100%;
   padding: 14px;
   background: #7a5cff;
   color: #0e0a1a;
