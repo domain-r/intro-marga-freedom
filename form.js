@@ -1,22 +1,21 @@
 const form = document.getElementById('introForm');
-const introBox = document.getElementById('introBox');
+const toast = document.getElementById('toast');
 
-// notif saat klik intro
-introBox.addEventListener('click', () => {
-  alert("Isi form intro dulu sebelum gabung grup!");
-});
+function showToast(msg, duration = 3000) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), duration);
+}
 
-// submit form dengan notif tambahan
 form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+  e.preventDefault(); // stop default form submit
 
   if (!form.checkValidity()) {
-    alert("Lengkapi semua field wajib.");
+    showToast("Lengkapi semua field wajib.", 3000);
     return;
   }
 
-  // notif sebelum submit
-  alert("Data terkirim! Tunggu validasi admin sebelum gabung grup.");
+  showToast("Mengirim data… ⏳", 3000);
 
   const formData = new FormData(form);
 
@@ -28,12 +27,15 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
+      showToast("Data terkirim! ✅", 2500);
+      setTimeout(() => {
+        window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
+      }, 1200); // biar notif keliatan dulu
     } else {
-      alert("Gagal submit. Coba lagi.");
+      showToast("Gagal submit. Coba lagi.", 3000);
     }
   } catch (err) {
     console.error(err);
-    alert("Terjadi error, cek koneksi.");
+    showToast("Terjadi error, cek koneksi.", 3000);
   }
 });
