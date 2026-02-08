@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marga Freedom — Intro Member</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+
     <h1>⟡ MARGA FREEDOM ⟡</h1>
-    <p class="subtitle"><strong>Freedom is not chaos.</strong><br>Freedom is self-control.</p>
+    <p class="subtitle">
+      <strong>Freedom is not chaos.</strong><br>
+      Freedom is self-control.
+    </p>
+
     <div class="divider">✦ ✦ ✦</div>
 
+    <div class="intro-box">
+      <p class="intro-quote">
+        ❝ Freedom bukan tempat sembarang orang.<br>
+        Hanya Pemuda Yang Mencari Kebebasan. ❞
+      </p>
+    </div>
+
+    <div class="divider">⟡ ⟡ ⟡</div>
+
     <form id="introForm">
+
       <label>⟡ Nama</label>
       <input type="text" name="nama" required>
 
@@ -25,7 +40,7 @@
       </select>
 
       <label>⟡ No WhatsApp</label>
-      <input type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" required pattern="^\+62\d{9,13}$">
+      <input type="tel" name="whatsapp" placeholder="+62xxxxxxxxxx" pattern="^\+62\d{9,13}$" required>
 
       <label>⟡ Nama TikTok</label>
       <input type="text" name="tiktok" placeholder="@username">
@@ -57,22 +72,42 @@
     </form>
 
     <div class="divider">✦ ✦ ✦</div>
-    <footer>⟡ Masuk dengan niat. Bertahan dengan sikap. ⟡</footer>
+
+    <footer>
+      ⟡ Masuk dengan niat. Bertahan dengan sikap. ⟡
+    </footer>
   </div>
 
-  <script src="form.js"></script>
-</body>
-</html>        });
+  <script>
+    const form = document.getElementById('introForm');
 
-        if (res.ok) {
-          // sukses → redirect manual ke halaman utama / success
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // cegah redirect default
+
+      // cek validasi sederhana
+      if (!form.checkValidity()) {
+        alert("Lengkapi semua field wajib.");
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://formspree.io/f/xgozqeaa", {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          // sukses → redirect ke halaman success
           window.location.href = "https://jiruxuen-stack.github.io/INTRO-MARGA-FREEDOM-/success.html";
         } else {
-          alert("Gagal submit. Coba lagi.");
+          alert("Gagal submit, coba lagi.");
         }
       } catch (err) {
         console.error(err);
-        alert("Terjadi error. Coba lagi.");
+        alert("Terjadi error, cek koneksi.");
       }
     });
   </script>
